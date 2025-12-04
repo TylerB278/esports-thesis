@@ -1,7 +1,7 @@
 ---
-title: Project 3
+title: Branding
 projectType: Print Design
-thumbnail: horse.jpg
+class: peter
 ---
 
 lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -1,25 +1,69 @@
 ---
+import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+
+//I GIVE UP
+//Import Hero Images 
+// import Peter from './astro-logo-light-gradient.png';
+
 const allProjects = await getCollection("projects");
+// const processedProjects = allProjects.map(async(project)=>{
+
+//   return {...project,imageSrc: await getImage({src: Peter, format: 'png'}) }
+// })
+
+
+
 ---
 
 {
   allProjects.map((project) => (
-    <a href={`/projects/${project.id}/`}>
-      {/* conditional rendering:
-      "if project.data.thumbnail exists, then create this <Image> element"
-      */}
-      {project.data.thumbnail && (
-        <Image class="project-img" src={project.data.thumbnail} alt="" />
-      )}
-      <h2>{project.data.title}</h2>
-      <p>{project.data.projectType}</p>
-    </a>
+    <div class={`projectCard ${project.data.class}`}>
+      <a href={`/projects/${project.id}/`}>
+        {/* conditional rendering:
+        "if project.data.thumbnail exists, then create this <Image> element"
+        */}
+        {/* {project.data.thumbnail && (
+          <Image class="project-img" src={project.data.thumbnail} alt="" />
+        )} */}
+        <h2>{project.data.title}</h2>
+        <p>{project.data.projectType}</p>
+      </a>
+    </div>
   ))
 }
 
 <style>
+  .projectCard{
+    display: flex;
+    flex-flow: wrap;
+    align-content: flex-end;
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    background-color: rgb(255, 230, 0);
+  }
+
+  .projectCard h2{
+    background-color: rgba(255, 187, 0);
+    width: 400px;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  .projectCard a{ text-decoration: none; }
+  .projectCard p{
+    background-color: rgba(255, 187, 0);
+    color: black;
+    width: 400px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+
+  .peter{
+    background-image: url(src/content/projects/chv/peter.png);
+  }
+
   .project-img {
     max-width: 300px;
   }
