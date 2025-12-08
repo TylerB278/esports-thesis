@@ -9,12 +9,74 @@ import ProjectList from "@components/ProjectList.astro";
 ---
 
 <Layout title="Astro Starter">
+  <div class="heroSect">
+    <h1 class="title th1">Tyler Boggi</h1>
+    <img src="/tyLogo.png" class="title timg"></img>
+    <h2 class="title th2">Graphic Designer</h2>
+  </div>
+  <nav></nav>
   <Container>
+
   <ProjectList />
     
   </Container>
+  <div class="test"></div>
 </Layout>
 
 <style>
+
+nav{
+  position: sticky;
+  top: 0px;
+  background-color: red;
+  width: 100%;
+  height: 10vh;
+}
+
+.heroSect{
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+}
+
+.title{
+
+  transform-origin: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 10vw;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: italic;
+} 
+
+@keyframes popIn {
+  from {scale(0%)}
+  to {scale(100%)}
+}
+
+.th1{ 
+  font-size: 10vw; 
+  width: 100%; 
+  padding-top: 60px; 
+  margin-bottom: -60px; 
+}
+.th2{ 
+  z-index: -10; 
+  font-size: 8vw; 
+  width: 100%; 
+  margin-top: -60px; 
+  margin-left: 30%; 
+}
+.timg{ 
+  z-index: 10; 
+  width: 40%; 
+  max-width: 500px; 
+  margin: 0 auto;
+  animation-name: popIn;
+  animation-duration: 3s;
+}
+
+.test{height: 1000px;}
 
 </style>
