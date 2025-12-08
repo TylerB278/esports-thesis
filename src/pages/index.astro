@@ -51,30 +51,41 @@ nav{
 } 
 
 @keyframes popIn {
-  from {scale(0%)}
-  to {scale(100%)}
+  from { transform: scale(0%); }
+  to { transform: scale(100%); }
+}
+@keyframes LtR {
+  from { margin-left: -60%; }
+  to { margin-left: 5%; }
+}
+@keyframes RtL {
+  from { margin-left: 120%; }
+  to { margin-left: 25%; }
 }
 
 .th1{ 
   font-size: 10vw; 
   width: 100%; 
+  margin-left: 5%;
   padding-top: 60px; 
   margin-bottom: -60px; 
+  animation: LtR 2s;
 }
 .th2{ 
   z-index: -10; 
   font-size: 8vw; 
   width: 100%; 
   margin-top: -60px; 
-  margin-left: 30%; 
+  margin-left: 25%; 
+  animation: RtL 2s;
 }
 .timg{ 
   z-index: 10; 
   width: 40%; 
   max-width: 500px; 
   margin: 0 auto;
-  animation-name: popIn;
-  animation-duration: 3s;
+  transform: scale(100%);
+  animation: popIn 1s;
 }
 
 .test{height: 1000px;}
