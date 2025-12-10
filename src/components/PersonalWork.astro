@@ -3,37 +3,15 @@ import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
-//I GIVE UP
-//Import Hero Images 
-// import Peter from './astro-logo-light-gradient.png';
-
-const allProjects = await getCollection("projects");
-// const processedProjects = allProjects.map(async(project)=>{
-
-//   return {...project,imageSrc: await getImage({src: Peter, format: 'png'}) }
-// })
-
-
-
 ---
 
-{
-  allProjects.map((project) => (
-    <div class={`projectCard ${project.data.class}`}><a href={`/projects/${project.id}/`} class="click"></a></div>
-    <div class="bottomCard">
-      <a href={`/projects/${project.id}/`}>
-        {/* conditional rendering:
-        "if project.data.thumbnail exists, then create this <Image> element"
-        */}
-        {/* {project.data.thumbnail && (
-          <Image class="project-img" src={project.data.thumbnail} alt="" />
-        )} */}
-        <h2>{project.data.title}</h2>
-        <p>{project.data.projectType}</p>
-      </a>
-    </div>
-  ))
-}
+  <div class={`perCard`}><a href="/personal" class="click"></a></div>
+  <div class="bottomCard">
+    <a href="/projects/markdown">
+      <h2>title</h2>
+      <p>text</p>
+    </a>
+  </div>
 
 <style>
   .projectCard{
