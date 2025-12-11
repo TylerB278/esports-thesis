@@ -1,0 +1,142 @@
+---
+import { getImage } from "astro:assets";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+//I GIVE UP
+//Import Hero Images 
+// import Peter from './astro-logo-light-gradient.png';
+
+const allProjects = await getCollection("clients");
+// const processedProjects = allProjects.map(async(project)=>{
+
+//   return {...project,imageSrc: await getImage({src: Peter, format: 'png'}) }
+// })
+
+
+
+---
+
+{
+  allProjects.map((project) => (
+    <div class={`projectCard ${project.data.class}`}><a href={`/clients/${project.id}/`} class="click"></a></div>
+    <div class="bottomCard">
+      <a href={`/clients/${project.id}/`}>
+        {/* conditional rendering:
+        "if project.data.thumbnail exists, then create this <Image> element"
+        */}
+        {/* {project.data.thumbnail && (
+          <Image class="project-img" src={project.data.thumbnail} alt="" />
+        )} */}
+        <h2>{project.data.title}</h2>
+        <p>{project.data.projectType}</p>
+      </a>
+    </div>
+  ))
+}
+
+<style>
+  .projectCard{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    width: 400px;
+    height: 250px;
+    margin: 20px;
+    margin-bottom: 0px;
+    background-color: rgb(255, 230, 0);
+    border: 0px solid rgba(255, 187, 0);
+    transition: all 0.2s;
+  }
+
+  .projectCard:hover{
+    border: 10px solid rgba(255, 187, 0);
+    background-size: 105.5%;
+  }
+
+  .projectCard:after{
+    padding: 20px;
+    background-color: rgba(255, 187, 0);
+    position: relative;
+    top: 0px;
+    width: 500px;
+    height: 323.5px;
+    left: 0px;
+    transition: all 0.2s;
+    z-index: -1;
+
+  }
+  .projectCard:hover:after{ 
+    background-color: rgba(255, 187, 0);
+    position: relative;
+    top: -10px;
+    width: 80vw;
+    height: 323.5px;
+    left: 490px;
+
+  }
+
+  .click{
+    position: absolute;
+    left: 20px;
+    width: 400px;
+    height: 250px;
+  }
+
+  .bottomCard{
+    margin-top: -10px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    width: 400px;
+  }
+
+  .bottomCard h2{
+    background-color: rgba(255, 187, 0);
+    width: 400px;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+  .bottomCard a{ text-decoration: none; }
+  .bottomCard p{
+    background-color: rgba(255, 187, 0);
+    color: black;
+    width: 400px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    margin-top: -8px;
+  }
+
+  .bottomCard h2,a:hover{  }
+
+  .peter{
+    background-image: url(src/content/projects/chv/peter.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: 100%;
+  } .peter:after{ content: "this is content for the CHV section" }
+
+  .chv{
+    background-image: url(src/content/clients/chv/thumbnail.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: 100%;
+  } .chv:after{ content: "this is content for the CHV section" }
+
+  .red{
+    background-image: url(src/content/clients/redmaster/thumbnail.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: 100%;
+  } .red:after{ content: "this is content for the Redmaster section" }
+
+  .awc{
+    background-image: url(src/content/clients/awc/thumbnail.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: 100%;
+  } .awc:after{ content: "this is content for the AWC section" }
+
+
+</style>
