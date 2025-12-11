@@ -5,55 +5,43 @@ import { Image } from "astro:assets";
 
 ---
 
-  <div class={`perCard`}><a href="/personal" class="click"></a></div>
-  <div class="bottomCard">
+  <div class="proj">
+    <div class="projectCard"><a href="/projects/markdown" class="click"></a></div>
+  </div>
+  <!-- <div class="bottomCard">
     <a href="/projects/markdown">
       <h2>title</h2>
       <p>text</p>
     </a>
-  </div>
+  </div> -->
 
 <style>
+
+  .proj{
+    display: flex;
+    justify-content: center;
+  }
+
   .projectCard{
     display: flex;
     flex-flow: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     overflow: visible;
-    width: 400px;
-    height: 250px;
+    width: 700px;
+    height: 500px;
     margin: 20px;
     margin-bottom: 0px;
-    background-color: rgb(255, 230, 0);
-    border: 0px solid rgba(255, 187, 0);
+    background-image: url(src/content/projects/personal/thumbnail.png);
+    background-size: 100%;
+    border: 10px solid rgba(255, 187, 0);
+    border-radius: 30px;
     transition: all 0.2s;
   }
 
   .projectCard:hover{
-    border: 10px solid rgba(255, 187, 0);
+
     background-size: 105.5%;
-  }
-
-  .projectCard:after{
-    padding: 20px;
-    background-color: rgba(255, 187, 0);
-    position: relative;
-    top: 0px;
-    width: 500px;
-    height: 323.5px;
-    left: 0px;
-    transition: all 0.2s;
-    z-index: -1;
-
-  }
-  .projectCard:hover:after{ 
-    background-color: rgba(255, 187, 0);
-    position: relative;
-    top: -10px;
-    width: 80vw;
-    height: 323.5px;
-    left: 490px;
-
   }
 
   .click{
@@ -64,57 +52,29 @@ import { Image } from "astro:assets";
   }
 
   .bottomCard{
+    /* background-color: rgba(255, 187, 0); */
     margin-top: -10px;
     margin-left: 20px;
     margin-bottom: 50px;
-    width: 400px;
+    width: 700px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 
   .bottomCard h2{
-    background-color: rgba(255, 187, 0);
-    width: 400px;
+    color: rgba(255, 187, 0);
+    width: 700px;
     padding-left: 20px;
     padding-top: 5px;
   }
   .bottomCard a{ text-decoration: none; }
   .bottomCard p{
-    background-color: rgba(255, 187, 0);
-    color: black;
-    width: 400px;
+    color: rgba(255, 187, 0);
+    width: 700px;
     padding-left: 20px;
     padding-bottom: 10px;
     margin-top: -8px;
   }
-
-  .bottomCard h2,a:hover{  }
-
-  .peter{
-    background-image: url(src/content/projects/chv/peter.png);
-    background-repeat: none;
-    background-position: center;
-    background-size: 100%;
-  } .peter:after{ content: "this is content for the CHV section" }
-
-  .chv{
-    background-image: url(src/content/projects/chv/thumbnail.png);
-    background-repeat: none;
-    background-position: center;
-    background-size: 100%;
-  } .chv:after{ content: "this is content for the CHV section" }
-
-  .red{
-    background-image: url(src/content/projects/redmaster/thumbnail.png);
-    background-repeat: none;
-    background-position: center;
-    background-size: 100%;
-  } .red:after{ content: "this is content for the Redmaster section" }
-
-  .awc{
-    background-image: url(src/content/projects/awc/thumbnail.png);
-    background-repeat: none;
-    background-position: center;
-    background-size: 100%;
-  } .awc:after{ content: "this is content for the AWC section" }
 
 
 </style>
