@@ -56,8 +56,10 @@ const allProjects = await getCollection("clients");
     background-size: 105.5%;
   }
 
-  .projectCard:after{
+  @media(min-width: 800px){
+    .projectCard:after{
     padding: 20px;
+    color: black;
     background-color: rgba(255, 187, 0);
     position: relative;
     top: 0px;
@@ -66,16 +68,12 @@ const allProjects = await getCollection("clients");
     left: 0px;
     transition: all 0.2s;
     z-index: -1;
-
-  }
-  .projectCard:hover:after{ 
-    background-color: rgba(255, 187, 0);
-    position: relative;
-    top: -10px;
-    width: 80vw;
-    height: 323.5px;
-    left: 490px;
-
+    }
+    .projectCard:hover:after{ 
+      position: relative;
+      top: -10px;
+      left: 390px;
+    }
   }
 
   .click{
@@ -129,14 +127,19 @@ const allProjects = await getCollection("clients");
     background-repeat: none;
     background-position: center;
     background-size: 100%;
-  } .red:after{ content: "this is content for the Redmaster section" }
+  } .red:after{ content: "I have worked with the streamer Redmaster on multiple occasions to create more of a brand identity for him and help him promote himself to new audiences" }
 
   .awc{
     background-image: url(src/content/clients/awc/thumbnail.png);
     background-repeat: none;
     background-position: center;
     background-size: 100%;
-  } .awc:after{ content: "this is content for the AWC section" }
+  } .awc:after{ content: "A series of works I made for my internship with the New Paltz Athletic & Wellness Center, all works were made with the restrictions imposed on my by following the New Paltz Athletics department style guide." }
 
+  @media(max-width:800px){ 
+    .projectCard:after {content: none;} 
+    .projectCard{align-self: center;}
+    .bottomCard{align-self: center; margin-left: 0px;}
+  }
 
 </style>

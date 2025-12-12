@@ -37,7 +37,7 @@ import { Image } from "astro:assets";
     margin: 0 auto;
     margin-bottom: 0px;
     background-image: url(src/content/personal/thumbnail.png);
-    background-size: 100%;
+    background-size: contain;
     border: 10px solid rgba(255, 187, 0);
     border-radius: 30px;
     transition: all 0.2s;
@@ -96,8 +96,9 @@ import { Image } from "astro:assets";
 
   @media(max-width: 900px){
     .projectCard, .click{
-      width: 100vw;
+      width: 95vw;
       height: 60vw;
+      margin-left: 35px;
     }
     .click{
       height: 57vw;
