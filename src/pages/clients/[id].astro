@@ -3,6 +3,7 @@ import Container from "@components/Container.astro";
 import Layout from "@layouts/Layout.astro";
 
 import { type CollectionEntry, getCollection, render } from "astro:content";
+import Image from "astro/components/Image.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("clients");
@@ -40,7 +41,7 @@ const { Content } = await render(post);
         </div>
         <h2 class="subHead">New Paltz Esports</h2>
         <p>Additionally through my Athletics internship I defined the design style for Esports at SUNY New Paltz. Below you can see the logo that I created to represent New Paltz Esports along with the same Athletics guidelines.</p>
-        <img src="/src/content/clients/awc/npesports-logo.png" class="workImg"></img>
+        <img src="/assets/awc/npesports-logo.png" class="workImg"></img>
         <p>Here you can see the posters and advertising materials I made for the Esports program through my time with the internship. I defined the design style for NP Esports to have the grainy background and sharp shapes to convey the same style of New Paltz but in a grittier, more competitive way.</p>
         <div class="multiCol">
           <img src="/src/content/clients/awc/general-interest.png" class="colImg"></img>
