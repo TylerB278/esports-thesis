@@ -106,8 +106,11 @@ import { Image } from "astro:assets";
     .projectCard, .click{
       width: 95vw;
       height: 60vw;
-      margin-left: 35px;
     }
+    .projectCard:after{
+      width: 95vw;
+      height: 60vw;
+    }.projectCard:hover:after{ scale: 105%; }
     .click{
       height: 57vw;
     }
