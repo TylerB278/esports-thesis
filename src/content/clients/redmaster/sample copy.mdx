@@ -7,6 +7,7 @@ content: "this is content for the redmaster section"
 
 {/* using components in an MDX file */}
 import ImageComponent from '@components/ImageComponent.astro';
+import MultiCol from '@components/MultiCol.astro';
 
 <ImageComponent folder="redmaster" w="500px"/>
 
@@ -14,6 +15,16 @@ I have worked with the streamer Redmaster on multiple occasions to create more o
 
 <br/>
 
-Below you can see all of the works I made for Redmaster. These were all rewards that would go out to people who subscribed to his channel and engaged with his content. He instructed me on how he presented himself to his audience and what the works should look like.
+Below you can see all of the works I made for Redmaster. This first section below were subscriber icons that would go to his subscribers depending on how long they were subscribed. These are required by twitch to be 72x72px so they can appear on small screens. He instructed me on how he presented himself to his audience and what the works should look like.
 
 <br/>
+
+<MultiCol>
+    <ImageComponent folder="redmaster" w="20%"/>
+    <ImageComponent folder="redmaster" w="20%"/>
+    <ImageComponent folder="redmaster" w="20%"/>
+</MultiCol>
+
+The next set of graphics I also made as rewards for his viewers, they are design templates for a set of digital cards he would give out as rewards.
+
+<ImageComponent folder="redmaster" w="500px" j="center"/>
